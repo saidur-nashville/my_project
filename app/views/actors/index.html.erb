@@ -1,0 +1,50 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<main role="main">
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="card-group">
+          <% @actors.each do |actor| %>
+            <div class="col-md-3">
+              <div class="card">
+                <%= image_tag actor.image.url(:medium), :class => "card-img-top" %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= actor.first_name %>&nbsp;<%= actor.last_name %></h5>
+                  <p class="card-text"><h6>Date of Birth: <%= actor.dob.strftime('%m/%d/%Y') rescue "" %></h6></p>
+                  <p class="card-text"><%= truncate(actor.movies, length:40) rescue "" %></p>
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <div class="btn-group">
+                      <%= link_to 'View More', actor, :class=>"btn btn-sm btn-outline-danger btn-block" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row" text-center>
+          <div class="col-md-12">
+            <section class="text-center">
+                <div class="container">
+                  <p>
+                    <%= link_to 'Add New People', new_actor_path, :class =>"btn btn-outline-primary my-2" %>
+                  </p>
+                </div>
+              </section>
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>

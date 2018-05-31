@@ -1,0 +1,51 @@
+<%= form_with(model: actor, local: true, html: { multipart: true }) do |form| %>
+  <% if actor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(actor.errors.count, "error") %> prohibited this actor from being saved:</h2>
+
+      <ul>
+      <% actor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+    <div class="form-group">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <%= form.label :first_name %>
+          <%= form.text_field :first_name, id: :actor_first_name, :class => "form-control",  :placeholder=> "First name" %>
+        </div>
+        <div class="col">
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, id: :actor_last_name, :class => "form-control",  :placeholder=> "Last name" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= form.label :date_of_birth %>
+      <%= form.date_field :dob, id: :actor_dob, :class => "form-control",  :placeholder=> "Date of Birth" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :biography %>
+      <%= form.text_area :bio, id: :actor_bio, :class => "form-control", :rows=> "3" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :additional_information %>
+      <%= form.text_area :movies, id: :actor_movies, :class => "form-control", :rows=> "3" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :profession %>
+      <%= form.text_field :image_name, id: :actor_image_name, :class => "form-control", :rows=> "3" %>
+    </div>
+    <div class="form-group">
+      <%= form.submit :class => 'btn btn-primary btn-lg' %>
+    </div>
+  </form>
+<% end %>
