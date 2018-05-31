@@ -20,6 +20,6 @@ This is a simple photo gallery with authentication (Desvie).  I didn't not get t
 	- Go to http://localhost:3000/ to view.
 
 * Database initialization
-	You will need MySQL installed and configured to make this photo gallery to work.
+	- You will need MySQL installed and configured to make this photo gallery to work.
 	
 Thank you.
