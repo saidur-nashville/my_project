@@ -19,7 +19,7 @@ gem "paperclip", "~> 6.0.0"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use bootstrap 4
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 # Use JavaScript file
 gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
